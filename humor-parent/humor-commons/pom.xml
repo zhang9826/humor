@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.zzx</groupId>
+        <artifactId>humor-parent</artifactId>
+        <version>1.0</version>
+    </parent>
+    <groupId>com.zzx</groupId>
+    <artifactId>humor-commons</artifactId>
+    <version>1.0</version>
+    <name>humor-commons</name>
+    <packaging>pom</packaging>
+    <description>humor 公共</description>
+    <modules>
+        <module>humor-pojo</module>
+        <module>humor-generato</module>
+    </modules>
+</project>
