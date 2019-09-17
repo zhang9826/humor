@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzx.humor.dao.HuRoleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zzx.humor.oauth.HuRole">
+        <id column="R_ID" property="rId" />
+        <result column="ROLE_NAME" property="roleName" />
+        <result column="ROLE_CODE" property="roleCode" />
+        <result column="ROLE_REMARK" property="roleRemark" />
+        <collection property="permissions" ofType="com.zzx.humor.oauth.HuMenu">
+            <id column="M_ID" property="mId" />
+            <result column="MENU_NAME" property="menuName" />
+            <result column="PARENT_ID" property="parentId" />
+            <result column="PATH" property="path" />
+            <result column="TYPE" property="type" />
+            <result column="VIEW" property="view" />
+            <result column="LOGO" property="logo" />
+            <result column="PERMISSION" property="permission" />
+        </collection>
+    </resultMap>
+
+    <select id="getRoleByUserId" resultMap="BaseResultMap">
+
+    </select>
+
+</mapper>

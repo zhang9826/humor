@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: humor-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.94.18.50:8848
+      config:
+        server-addr: 47.94.18.50:8848
+        file-extension: yaml
+        timeout: 10000

@@ -16,5 +16,6 @@
     <modules>
         <module>humor-pojo</module>
         <module>humor-generato</module>
+        <module>humor-common</module>
     </modules>
 </project>

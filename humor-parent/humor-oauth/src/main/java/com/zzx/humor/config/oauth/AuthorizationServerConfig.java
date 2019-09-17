@@ -1,5 +1,6 @@
 package com.zzx.humor.config.oauth;
 
+import com.zzx.humor.constants.OauthConstant;
 import com.zzx.humor.service.HumorClientDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -54,7 +55,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Bean
     public JwtAccessTokenConverter jwtAccessTokenConverter() {
         JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
-        jwtAccessTokenConverter.setSigningKey("humor-zzx"); //对称加密方式
+        jwtAccessTokenConverter.setSigningKey(OauthConstant.SIGNING_KEY); //对称加密方式
         return jwtAccessTokenConverter;
     }
 

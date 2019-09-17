@@ -1,6 +1,7 @@
 package com.zzx.humor.config.oauth;
 
 import cn.hutool.json.JSONObject;
+import com.zzx.humor.constants.OauthConstant;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
@@ -20,7 +21,7 @@ public class HumorTokenEnhancer implements TokenEnhancer {
         final Map<String, Object> additionalInfo = new HashMap<>();
         // 给/oauth/token接口加属性 author
         JSONObject jsonObject = new JSONObject(authentication.getPrincipal());
-        additionalInfo.put("author", jsonObject.get("username"));
+        additionalInfo.put(OauthConstant.AUTHOR, jsonObject.get("username"));
         ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(additionalInfo);
         return accessToken;
     }

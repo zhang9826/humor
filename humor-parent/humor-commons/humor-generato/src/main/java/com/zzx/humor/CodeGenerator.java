@@ -23,14 +23,14 @@ public class CodeGenerator {
         dsc.setDbType(DbType.MYSQL);//sql数据库 类型
         dsc.setUrl("jdbc:mysql://120.79.35.220:3306/humor?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true");
         dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("root");
-        dsc.setPassword("@zzxsy");
+        dsc.setUsername("zzx");
+        dsc.setPassword("zzxsy@2019");
         generator.setDataSource(dsc);
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
         strategy.setRestControllerStyle(true);//加restController
-        strategy.setInclude(new String[]{"HU_USER"});//要生成的表
+        strategy.setInclude(new String[]{"HU_ROLE","HU_MENU"});//要生成的表
         strategy.setEntityLombokModel(true);
         generator.setStrategy(strategy);
         PackageConfig pc = new PackageConfig();
