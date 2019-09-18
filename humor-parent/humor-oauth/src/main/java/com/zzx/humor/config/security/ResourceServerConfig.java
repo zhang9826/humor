@@ -1,10 +1,12 @@
 package com.zzx.humor.config.security;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.zzx.humor.config.MybatisPlusConfig;
 import com.zzx.humor.dao.OauthClientDetailsMapper;
 import com.zzx.humor.exception.HuAccessDeniedHandler;
 import com.zzx.humor.exception.HuAuthExceptionEntryPoint;
 import com.zzx.humor.oauth.OauthClientDetails;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -31,9 +33,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .anyRequest().authenticated()
-                .antMatchers("/principal", "/exit", "/decodeToken").permitAll()
-                .anyRequest().denyAll();
+                .antMatchers("/ha/**").permitAll()
+                .anyRequest().authenticated();
     }
 
     @Override

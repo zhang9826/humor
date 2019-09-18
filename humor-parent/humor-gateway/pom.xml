@@ -24,6 +24,11 @@
             <artifactId>spring-cloud-starter-oauth2</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.marcosbarbero.cloud</groupId>
+            <artifactId>spring-cloud-zuul-ratelimit</artifactId>
+            <version>${zuul.ratelimit.version}</version>
+        </dependency>
+        <dependency>
             <groupId>com.zzx</groupId>
             <artifactId>humor-common</artifactId>
             <version>1.0</version>

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.security.Principal;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/ha")
 public class OauthController {
 
     @Autowired
@@ -24,7 +24,7 @@ public class OauthController {
      * @return
      */
     @GetMapping("/principal")
-    public Principal user(Principal principal) {
+    public Principal principal(Principal principal) {
         return principal;
     }
 
