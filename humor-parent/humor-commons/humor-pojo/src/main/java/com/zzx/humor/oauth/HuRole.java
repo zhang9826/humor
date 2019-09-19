@@ -29,8 +29,8 @@ public class HuRole implements Serializable {
     /**
      * ID
      */
-    @TableId("R_ID")
-    private String rId;
+    @TableId("HR_ID")
+    private String hrId;
 
     /**
      * 角色名称

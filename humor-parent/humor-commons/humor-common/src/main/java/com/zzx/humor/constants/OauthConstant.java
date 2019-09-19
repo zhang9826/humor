@@ -33,4 +33,5 @@ public interface OauthConstant {
      * 账号未激活
      */
     String ACCOUNT_NOT_ACTIVATED = "account not activated";
+
 }

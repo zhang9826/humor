@@ -30,11 +30,11 @@ public class CodeGenerator {
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
         strategy.setRestControllerStyle(true);//加restController
-        strategy.setInclude(new String[]{"HU_ROLE","HU_MENU"});//要生成的表
+        strategy.setInclude(new String[]{"OAUTH_CLIENT_DETAILS"});//要生成的表
         strategy.setEntityLombokModel(true);
         generator.setStrategy(strategy);
         PackageConfig pc = new PackageConfig();
-        pc.setParent("com.eshop");//父包名
+        pc.setParent("com.zzx.humor");//父包名
         generator.setPackageInfo(pc);
         generator.setTemplateEngine(new FreemarkerTemplateEngine());
         generator.execute();

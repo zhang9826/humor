@@ -1,6 +1,7 @@
 package com.zzx.humor.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.zzx.humor.constants.CommonConstant;
 import com.zzx.humor.constants.OauthConstant;
 import com.zzx.humor.dao.HuRoleMapper;
 import com.zzx.humor.dao.HuUserMapper;
@@ -39,9 +40,9 @@ public class HuUserDetailService implements UserDetailsService {
             throw new HuRuntimeException(R.failed(OauthConstant.USER_NOT_EXIST));
         }
         switch (huUser.getStatus()) {
-            case "0":
+            case CommonConstant.DISABLED:
                 throw new HuRuntimeException(R.failed(OauthConstant.ACCOUNT_DISABLED));
-            case "2":
+            case CommonConstant.NOT_ACTIVE:
                 throw new HuRuntimeException(R.failed(OauthConstant.ACCOUNT_NOT_ACTIVATED));
         }
         String password = new BCryptPasswordEncoder().encode(huUser.getPassword());

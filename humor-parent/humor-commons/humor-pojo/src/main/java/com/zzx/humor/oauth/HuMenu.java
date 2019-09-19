@@ -27,8 +27,8 @@ public class HuMenu implements Serializable {
     /**
      * ID
      */
-    @TableId("M_ID")
-    private String mId;
+    @TableId("HM_ID")
+    private String hmId;
 
     /**
      * 菜单名称
