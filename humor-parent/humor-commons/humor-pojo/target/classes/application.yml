@@ -6,3 +6,6 @@ mybatis-plus:
   configuration:
     cache-enabled: false
     call-setters-on-nulls: true
+spring:
+  mvc:
+    locale: zh_CN

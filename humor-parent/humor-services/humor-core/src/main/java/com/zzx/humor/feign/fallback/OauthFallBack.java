@@ -2,6 +2,7 @@ package com.zzx.humor.feign.fallback;
 
 import com.zzx.humor.constants.ServerConstant;
 import com.zzx.humor.feign.OauthClient;
+import com.zzx.humor.result.R;
 import com.zzx.humor.result.RE;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -19,5 +20,10 @@ public class OauthFallBack implements OauthClient {
         hashMap.put("code",re.getCode());
         hashMap.put("msg",re.getMsg());
         return hashMap;
+    }
+
+    @Override
+    public R logout(String token) {
+        return R.other(RE.TIMEOUT);
     }
 }

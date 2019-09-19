@@ -21,7 +21,20 @@
     </resultMap>
 
     <select id="getRoleByUserId" resultMap="BaseResultMap">
-
+        SELECT
+          hm.*,
+          hr.*
+        FROM
+          `HU_MENU` hm,
+          `HU_ROLE_MENU` hrm,
+          `HU_ROLE` hr,
+          `HU_USER_ROLE` hur,
+          `HU_USER` hu
+        WHERE hm.`HM_ID` = hrm.`MENU_ID`
+          AND hr.`HR_ID` = hrm.`ROLE_ID`
+          AND hr.`HR_ID` = hur.`ROLE_ID`
+          AND hu.`ID` = hur.`USER_ID`
+          AND hu.`ID` = #{id}
     </select>
 
 </mapper>

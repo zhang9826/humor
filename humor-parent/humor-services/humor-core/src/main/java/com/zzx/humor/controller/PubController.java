@@ -12,6 +12,8 @@ import com.zzx.humor.service.IHuUserService;
 import com.zzx.humor.service.IOauthClientDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,6 +27,7 @@ public class PubController {
 
     @Autowired
     private OauthClient oauthClient;
+
     @Autowired
     private IHuUserService userService;
 
@@ -48,7 +51,7 @@ public class PubController {
             return R.failed(OauthConstant.CLIENT_NOT_EXIST);
         }
         HashMap hashMap = oauthClient.getToken(account,password,clientId,oauthClientDetails.getClientSecret(),"password",oauthClientDetails.getScope());
-        if (hashMap==null){
+        if (hashMap.size()==0){
             return R.other(RE.FAILED);
         }
         return R.ok(hashMap);
