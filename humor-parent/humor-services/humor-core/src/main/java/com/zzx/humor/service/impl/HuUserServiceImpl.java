@@ -1,6 +1,6 @@
 package com.zzx.humor.service.impl;
 
-import com.zzx.humor.dao.HuUserMapper;
+import com.zzx.humor.mapper.HuUserMapper;
 import com.zzx.humor.oauth.HuUser;
 import com.zzx.humor.service.IHuUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

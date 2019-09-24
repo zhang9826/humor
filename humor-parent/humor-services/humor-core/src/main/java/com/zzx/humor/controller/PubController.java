@@ -13,12 +13,16 @@ import com.zzx.humor.service.IOauthClientDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 
+/**
+ * TODO 登入 登出
+ */
 @RestController
 public class PubController {
 
@@ -28,24 +32,17 @@ public class PubController {
     @Autowired
     private OauthClient oauthClient;
 
-    @Autowired
-    private IHuUserService userService;
-
     @Value("${security.oauth2.resource.id}")
     private String clientId;
 
+    /**
+     * 登录 本身不做校验 交给 humor oauth 校验
+     * @param account
+     * @param password
+     * @return
+     */
     @PostMapping("/login")
     public R Login(String account, String password) {
-        HuUser huUser = userService.getOne(new QueryWrapper<HuUser>().eq("ACCOUNT", account).eq("FLAG", CommonConstant.NOT_DELETE));
-        if (huUser == null) {
-            return R.failed(OauthConstant.USER_NOT_EXIST);
-        }
-        switch (huUser.getStatus()) {
-            case CommonConstant.DISABLED:
-                return R.failed(OauthConstant.ACCOUNT_DISABLED);
-            case CommonConstant.NOT_ACTIVE:
-                return R.failed(OauthConstant.ACCOUNT_NOT_ACTIVATED);
-        }
         OauthClientDetails oauthClientDetails = oauthClientDetailsService.getOne(new QueryWrapper<OauthClientDetails>().eq("CLIENT_ID", clientId));
         if (oauthClientDetails == null) {
             return R.failed(OauthConstant.CLIENT_NOT_EXIST);
@@ -55,5 +52,15 @@ public class PubController {
             return R.other(RE.FAILED);
         }
         return R.ok(hashMap);
+    }
+
+    /**
+     *  登出
+     * @param token
+     * @return
+     */
+    @DeleteMapping("/exit")
+    public R exit(String token){
+        return oauthClient.exit(token);
     }
 }

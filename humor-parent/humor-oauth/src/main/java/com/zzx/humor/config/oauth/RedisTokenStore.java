@@ -15,7 +15,7 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 import java.util.*;
 
 /**
- *  重写RedisTokenStore
+ *  TODO 重写RedisTokenStore
  *  spring5.0修改了一些方法，导致不兼容，需要重写全部的set()为stringCommands().set()
  *  也可添加依赖解决
  *  <dependency>

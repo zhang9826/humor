@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
 
+/**
+ * TODO 认证中心对外 api
+ */
 @RestController
 public class OauthController {
 

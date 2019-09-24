@@ -1,7 +1,7 @@
 package com.zzx.humor.constants;
 
 /**
- * oauth 模块常量
+ * TODO oauth 模块常量
  */
 public interface OauthConstant {
     /**

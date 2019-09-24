@@ -3,7 +3,7 @@ package com.zzx.humor.exception;
 import com.zzx.humor.result.R;
 
 /**
- * 自定义 运行 异常
+ * TODO 自定义 运行 异常
  */
 public class HuRuntimeException extends RuntimeException {
 

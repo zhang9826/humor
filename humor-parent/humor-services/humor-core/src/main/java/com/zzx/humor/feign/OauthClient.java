@@ -4,6 +4,7 @@ import com.zzx.humor.constants.ServerConstant;
 import com.zzx.humor.feign.fallback.OauthFallBack;
 import com.zzx.humor.result.R;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,9 +33,9 @@ public interface OauthClient {
 
     /**
      * 清除token（注销登录）
-     *
+     * @param token
      * @return
      */
-    @GetMapping("/exit")
-    R logout(@RequestParam("token") String token);
+    @DeleteMapping("/exit")
+    R exit(@RequestParam("token") String token);
 }

@@ -9,9 +9,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
- * <p>
- * 
- * </p>
+ *TODO 服务 连接信息
  *
  * @author zhang
  * @since 2019-09-17

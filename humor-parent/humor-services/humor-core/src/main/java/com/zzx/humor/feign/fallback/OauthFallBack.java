@@ -23,7 +23,7 @@ public class OauthFallBack implements OauthClient {
     }
 
     @Override
-    public R logout(String token) {
+    public R exit(String token) {
         return R.other(RE.TIMEOUT);
     }
 }

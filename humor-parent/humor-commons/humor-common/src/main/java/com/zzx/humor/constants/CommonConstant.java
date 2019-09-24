@@ -1,7 +1,7 @@
 package com.zzx.humor.constants;
 
 /**
- * 公共常量
+ * TODO 公共常量
  */
 public interface CommonConstant {
 

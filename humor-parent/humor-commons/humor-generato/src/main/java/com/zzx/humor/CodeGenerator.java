@@ -8,9 +8,11 @@ import com.baomidou.mybatisplus.generator.config.PackageConfig;
 import com.baomidou.mybatisplus.generator.config.StrategyConfig;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ *
+ * TODO mybaties-plus 代码生成器
+ */
 public class CodeGenerator {
     public static void main(String[] args) {
         AutoGenerator generator = new AutoGenerator();

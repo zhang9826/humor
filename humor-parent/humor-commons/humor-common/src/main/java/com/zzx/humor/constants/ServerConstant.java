@@ -1,7 +1,7 @@
 package com.zzx.humor.constants;
 
 /**
- * 服务 常量
+ * TODO 服务 常量
  */
 public interface ServerConstant {
 

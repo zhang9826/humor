@@ -1,4 +1,4 @@
-package com.zzx.humor.dao;
+package com.zzx.humor.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.zzx.humor.oauth.HuRole;
@@ -15,5 +15,4 @@ import java.util.List;
  */
 public interface HuRoleMapper extends BaseMapper<HuRole> {
 
-    List<HuRole> getRoleByUserId(String id);
 }

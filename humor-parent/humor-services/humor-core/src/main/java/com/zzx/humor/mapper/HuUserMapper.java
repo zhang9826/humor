@@ -1,4 +1,4 @@
-package com.zzx.humor.dao;
+package com.zzx.humor.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.zzx.humor.oauth.HuUser;
