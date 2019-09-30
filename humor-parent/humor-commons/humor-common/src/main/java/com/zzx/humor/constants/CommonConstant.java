@@ -24,6 +24,11 @@ public interface CommonConstant {
      */
     String NOT_ACTIVE ="2";
 
+    /**
+     * mybaties 扫描 路径
+     */
+    String MYBATIES_SCAN="com.**.mapper";
+
 
 
 }

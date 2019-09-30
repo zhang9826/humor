@@ -34,4 +34,9 @@ public interface OauthConstant {
      */
     String ACCOUNT_NOT_ACTIVATED = "account not activated";
 
+    /**
+     * 用户类型  0普通用户 1普通会员 2超级会员 3商家 4后台管理人员
+     */
+    String USER_TYPE = "";
+
 }

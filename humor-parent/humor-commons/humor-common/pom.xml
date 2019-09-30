@@ -13,14 +13,4 @@
     <name>humor-common</name>
     <packaging>jar</packaging>
     <description>humor 工具包</description>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
 </project>

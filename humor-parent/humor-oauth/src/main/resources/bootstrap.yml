@@ -9,3 +9,5 @@ spring:
         server-addr: 47.94.18.50:8848
         file-extension: yaml
         timeout: 10000
+        shared-dataids: humor.yaml
+        refreshable-dataids: humor.yaml

@@ -13,4 +13,7 @@ import com.zzx.humor.oauth.HuUser;
  */
 public interface IHuUserService extends IService<HuUser> {
 
+    Boolean checkAccount(String account);
+
+    void register(HuUser huUser);
 }

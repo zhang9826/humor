@@ -13,10 +13,7 @@ import com.zzx.humor.service.IOauthClientDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 
@@ -34,6 +31,9 @@ public class PubController {
 
     @Value("${security.oauth2.resource.id}")
     private String clientId;
+
+    @Autowired
+    private IHuUserService userService;
 
     /**
      * 登录 本身不做校验 交给 humor oauth 校验
@@ -62,5 +62,26 @@ public class PubController {
     @DeleteMapping("/exit")
     public R exit(String token){
         return oauthClient.exit(token);
+    }
+
+    /**
+     * 用户 注册
+     * @return
+     */
+    @PostMapping("/register")
+    public R register(@RequestBody HuUser huUser){
+        userService.register(huUser);
+        return R.ok();
+    }
+
+    /**
+     * 校验 用户名是否重复
+     * @param account
+     * @return
+     */
+    @GetMapping("/checkAccount")
+    public  R checkAccount(String account){
+        Boolean flag = userService.checkAccount(account);
+        return R.ok(flag);
     }
 }

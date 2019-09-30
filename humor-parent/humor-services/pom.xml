@@ -35,6 +35,11 @@
             <artifactId>humor-common</artifactId>
             <version>1.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.zzx</groupId>
+            <artifactId>humor-config</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
 </project>

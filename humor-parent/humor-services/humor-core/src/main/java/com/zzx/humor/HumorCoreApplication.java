@@ -7,6 +7,9 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 
+/**
+ * TODO humor 核心服务 入口
+ */
 @RefreshScope
 @SpringBootApplication
 @EnableDiscoveryClient
