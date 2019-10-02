@@ -1,7 +1,7 @@
 package com.zzx.humor.constants;
 
 /**
- * 公共常量
+ * TODO 公共常量
  */
 public interface CommonConstant {
 
@@ -23,6 +23,11 @@ public interface CommonConstant {
      * 未激活
      */
     String NOT_ACTIVE ="2";
+
+    /**
+     * mybaties 扫描 路径
+     */
+    String MYBATIES_SCAN="com.**.mapper";
 
 
 

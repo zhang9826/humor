@@ -1,6 +1,6 @@
 package com.zzx.humor.service.impl;
 
-import com.zzx.humor.dao.OauthClientDetailsMapper;
+import com.zzx.humor.mapper.OauthClientDetailsMapper;
 import com.zzx.humor.oauth.OauthClientDetails;
 import com.zzx.humor.service.IOauthClientDetailsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

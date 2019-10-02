@@ -98,6 +98,7 @@
     <orderEntry type="library" name="Maven: com.marcosbarbero.cloud:spring-cloud-zuul-ratelimit:1.3.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.marcosbarbero.cloud:spring-cloud-zuul-ratelimit-core:1.3.2.RELEASE" level="project" />
     <orderEntry type="module" module-name="humor-common" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-pool2:2.5.0" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config:2.1.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.cloud:spring-cloud-alibaba-nacos-config:2.1.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.nacos:nacos-client:1.1.1" level="project" />

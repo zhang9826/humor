@@ -2,7 +2,7 @@ package com.zzx.humor.result;
 
 
 /**
- * 返回结果 枚举
+ * TODO 返回结果 枚举
  */
 public enum RE {
     /**

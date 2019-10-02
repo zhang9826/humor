@@ -5,6 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 
+/**
+ * TODO 认证中心启动类
+ */
 @RefreshScope
 @SpringBootApplication
 @EnableDiscoveryClient

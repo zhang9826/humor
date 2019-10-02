@@ -18,7 +18,7 @@ public class HumorCoreServerConfig extends ResourceServerConfigurerAdapter {
                 .authenticationEntryPoint((request, response, authException) -> response.sendError(HttpServletResponse.SC_UNAUTHORIZED))
                 .and()
                 .authorizeRequests()
-                .antMatchers("/login","/exit","/register","/actuator/**").permitAll()
+                .antMatchers("/login","/exit","/register","/checkAccount","/actuator/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic();

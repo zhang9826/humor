@@ -1,7 +1,7 @@
 package com.zzx.humor.constants;
 
 /**
- * oauth 模块常量
+ * TODO oauth 模块常量
  */
 public interface OauthConstant {
     /**
@@ -33,5 +33,10 @@ public interface OauthConstant {
      * 账号未激活
      */
     String ACCOUNT_NOT_ACTIVATED = "account not activated";
+
+    /**
+     * 用户类型  0普通用户 1普通会员 2超级会员 3商家 4后台管理人员
+     */
+    String USER_TYPE = "";
 
 }

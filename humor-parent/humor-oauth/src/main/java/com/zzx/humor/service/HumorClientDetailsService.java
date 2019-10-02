@@ -1,7 +1,7 @@
 package com.zzx.humor.service;
 
 import com.zzx.humor.constants.OauthConstant;
-import com.zzx.humor.dao.OauthClientDetailsMapper;
+import com.zzx.humor.mapper.OauthClientDetailsMapper;
 import com.zzx.humor.exception.HuRuntimeException;
 import com.zzx.humor.oauth.OauthClientDetails;
 import com.zzx.humor.result.R;
