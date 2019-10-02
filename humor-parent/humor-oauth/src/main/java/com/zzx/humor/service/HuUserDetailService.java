@@ -18,6 +18,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.oauth2.common.OAuth2AccessToken;
+import org.springframework.security.oauth2.provider.token.ConsumerTokenServices;
+import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -51,7 +54,7 @@ public class HuUserDetailService implements UserDetailsService {
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
         for (HuRole huRole : huRoles) {
             //角色必须是ROLE_开头
-            GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("ROLE_" +huRole.getRoleCode());
+            GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("ROLE_" + huRole.getRoleCode());
             grantedAuthorities.add(grantedAuthority);
             //获取权限
             for (HuMenu permission : huRole.getPermissions()) {
@@ -60,7 +63,6 @@ public class HuUserDetailService implements UserDetailsService {
             }
         }
         User user = new User(account, password, grantedAuthorities);
-        System.err.println("当前登录的用户是：" + account);
         return user;
     }
 }

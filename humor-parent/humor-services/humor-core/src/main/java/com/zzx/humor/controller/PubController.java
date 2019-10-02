@@ -13,6 +13,7 @@ import com.zzx.humor.service.IOauthClientDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,24 +29,11 @@ public class PubController {
     @Autowired
     private OauthClient oauthClient;
 
-    @Autowired
-    private IHuUserService userService;
-
     @Value("${security.oauth2.resource.id}")
     private String clientId;
 
     @PostMapping("/login")
     public R Login(String account, String password) {
-        HuUser huUser = userService.getOne(new QueryWrapper<HuUser>().eq("ACCOUNT", account).eq("FLAG", CommonConstant.NOT_DELETE));
-        if (huUser == null) {
-            return R.failed(OauthConstant.USER_NOT_EXIST);
-        }
-        switch (huUser.getStatus()) {
-            case CommonConstant.DISABLED:
-                return R.failed(OauthConstant.ACCOUNT_DISABLED);
-            case CommonConstant.NOT_ACTIVE:
-                return R.failed(OauthConstant.ACCOUNT_NOT_ACTIVATED);
-        }
         OauthClientDetails oauthClientDetails = oauthClientDetailsService.getOne(new QueryWrapper<OauthClientDetails>().eq("CLIENT_ID", clientId));
         if (oauthClientDetails == null) {
             return R.failed(OauthConstant.CLIENT_NOT_EXIST);
@@ -54,6 +42,15 @@ public class PubController {
         if (hashMap.size()==0){
             return R.other(RE.FAILED);
         }
+        R r = oauthClient.exitFormer(clientId,account);
+        if (r.getCode()!=R.ok().getCode()){
+            //当前账号 有多个用户登陆 刷新token
+            hashMap = oauthClient.refreshToken(clientId,oauthClientDetails.getClientSecret(),"refresh_token","");
+        }
         return R.ok(hashMap);
+    }
+    @DeleteMapping("/exit")
+    public R exit(String token){
+        return R.ok();
     }
 }

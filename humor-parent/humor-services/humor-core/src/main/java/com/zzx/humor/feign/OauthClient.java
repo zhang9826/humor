@@ -17,6 +17,14 @@ import java.util.HashMap;
 public interface OauthClient {
 
     /**
+     * 单线登陆 踢出前者
+     * @param clientId
+     * @param account
+     */
+    @GetMapping("/exitFormer")
+    R exitFormer(@RequestParam("clientId") String clientId,@RequestParam("account") String account);
+
+    /**
      * 获取token
      *
      * @param username
@@ -37,4 +45,7 @@ public interface OauthClient {
      */
     @GetMapping("/exit")
     R logout(@RequestParam("token") String token);
+
+    @PostMapping("/oauth/token")
+    HashMap<String,String> refreshToken(@RequestParam("client_id") String client_id,@RequestParam("client_secret") String client_secret,@RequestParam("grant_type") String grant_type,@RequestParam("refresh_token") String refresh_token);
 }
